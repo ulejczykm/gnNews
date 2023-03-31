@@ -13,3 +13,9 @@
   font-weight: 700;
   font-size: 40px;
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+}
