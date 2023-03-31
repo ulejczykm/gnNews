@@ -24,7 +24,6 @@ interface NewsInterface {
 export const NewsViewContainer = () => {
   const { countryCodes } = useParams<{ countryCodes: string }>();
   const code = countryCodes || "pl";
-  console.log(countryCodes);
   const apiKey = process.env.REACT_APP_NEWS_API;
   const { view } = useSelector((state: RootState) => state.newsView);
   const [news, setNews] = useState<NewsInterface[]>([]);
@@ -47,13 +46,11 @@ export const NewsViewContainer = () => {
       }
     };
     fetchNews();
-  }, []);
+  }, [code]);
 
   useEffect(() => {
     dispatch(setArticlesNumber(news.length));
   }, [news]);
-
-  console.log(news);
 
   return (
     <main className="mainContainer">
