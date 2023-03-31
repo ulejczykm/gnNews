@@ -1,13 +1,17 @@
+import "./App.scss";
 import { Header } from "components/Header";
 import { Footer } from "components/Footer";
-import "./App.scss";
 import { NewsViewContainer } from "components/NewsViewContainer";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <NewsViewContainer />
+      <Routes>
+        <Route path="/country/:countryCodes" element={<NewsViewContainer />} />
+        <Route path="/" element={<NewsViewContainer />} />
+      </Routes>
       <Footer />
     </div>
   );

@@ -1,5 +1,6 @@
-import { GridItem } from "components/GridItem";
 import "./styles.scss";
+import { useParams } from "react-router-dom";
+import { GridItem } from "components/GridItem";
 import { ListItem } from "components/ListItem";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,6 +22,9 @@ interface NewsInterface {
 }
 
 export const NewsViewContainer = () => {
+  const { countryCodes } = useParams<{ countryCodes: string }>();
+  const code = countryCodes || "pl";
+  console.log(countryCodes);
   const apiKey = process.env.REACT_APP_NEWS_API;
   const { view } = useSelector((state: RootState) => state.newsView);
   const [news, setNews] = useState<NewsInterface[]>([]);
@@ -31,7 +35,7 @@ export const NewsViewContainer = () => {
     const fetchNews = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=pl&apiKey=${apiKey}`
+          `https://newsapi.org/v2/top-headlines?country=${code}&apiKey=${apiKey}`
         );
         if (!response.ok) {
           throw new Error("Request failed with status " + response.status);
