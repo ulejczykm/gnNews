@@ -1,7 +1,7 @@
-import { Popup } from "components/Popup/Popup";
+import { Popup } from "components/Popup";
+import { ToggleMainViewButton } from "components/ToggleMainViewButton";
 import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
 import "./styles.scss";
-import { ToggleMainViewButton } from "components/ToggleMainViewButton";
 
 export const Header = () => {
   return (
