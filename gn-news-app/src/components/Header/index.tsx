@@ -8,7 +8,17 @@ export const Header = () => {
     <header className="headerContainer">
       <Popup
         buttonComponent={
-          <PsychologyAltIcon sx={{ color: "wheat", width: 44, height: 44 }} />
+          <PsychologyAltIcon
+            sx={{
+              color: "wheat",
+              width: 44,
+              height: 44,
+              "@media (max-width:480px)": {
+                width: 32,
+                height: 32,
+              },
+            }}
+          />
         }
       >
         test
