@@ -11,12 +11,23 @@ import {
   NewsViewType,
 } from "../../store/slices/newsViewSlice";
 
-const buttonStyle = {
+const buttonIconStyle = {
   bgcolor: "wheat",
   width: 44,
   height: 44,
   borderRadius: "20%",
   padding: "6px",
+  "@media (max-width:480px)": {
+    width: 32,
+    height: 32,
+  },
+};
+
+const buttonStyle = {
+  "@media (max-width:480px)": {
+    padding: "4px",
+    margin: "6px",
+  },
 };
 
 export const ToggleMainViewButton = () => {
@@ -38,16 +49,18 @@ export const ToggleMainViewButton = () => {
         onClick={() => onClickHandle(LIST)}
         value="left"
         aria-label="center aligned"
+        sx={buttonStyle}
       >
-        <List sx={buttonStyle} />
+        <List sx={buttonIconStyle} />
       </ToggleButton>
 
       <ToggleButton
         onClick={() => onClickHandle(GRID)}
         value="right"
         aria-label="center aligned"
+        sx={buttonStyle}
       >
-        <ViewModule sx={buttonStyle} />
+        <ViewModule sx={buttonIconStyle} />
       </ToggleButton>
     </ToggleButtonGroup>
   );
