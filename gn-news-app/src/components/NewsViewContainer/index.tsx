@@ -9,6 +9,7 @@ import { LIST } from "store/slices/newsViewSlice";
 import { RootState } from "store/store";
 import { Popup } from "components/Popup";
 import { NewsContent } from "components/NewsContent";
+import { Menu } from "components/Menu";
 
 interface NewsInterface {
   author: string;
@@ -97,6 +98,8 @@ export const NewsViewContainer = () => {
           )
         )}
       </ul>
+
+      <Menu />
     </main>
   );
 };
