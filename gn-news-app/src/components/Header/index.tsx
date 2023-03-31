@@ -2,6 +2,7 @@ import { Popup } from "components/Popup";
 import { ToggleMainViewButton } from "components/ToggleMainViewButton";
 import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -21,10 +22,14 @@ export const Header = () => {
           />
         }
       >
-        test
+        <p>test</p>
       </Popup>
 
-      <h1 className="title">GN NEWS</h1>
+      <h1 className="title">
+        <Link className="linkTitle" to="/">
+          GN NEWS
+        </Link>
+      </h1>
 
       <ToggleMainViewButton />
     </header>
