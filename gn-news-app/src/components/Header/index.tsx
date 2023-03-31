@@ -14,7 +14,7 @@ export const Header = () => {
         test
       </Popup>
 
-      <span className="title">GN NEWS</span>
+      <h1 className="title">GN NEWS</h1>
 
       <ToggleMainViewButton />
     </header>
