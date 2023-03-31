@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import newsViewReducer from "./newsViewSlice";
+import rootReducer from "./rootReducer";
 
 const store = configureStore({
-  reducer: newsViewReducer,
+  reducer: rootReducer,
 });
 
 export type AppDispatch = typeof store.dispatch;
