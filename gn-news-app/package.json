@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@mui/types": "^7.2.3",
     "@types/intl": "^1.2.0",
     "@types/react": "^18.0.31",
     "sass": "^1.60.0"
