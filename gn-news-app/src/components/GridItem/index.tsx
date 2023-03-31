@@ -15,7 +15,7 @@ export const GridItem = ({
   urlToImage,
   description,
 }: Props) => (
-  <li className="gridItem">
+  <div className="gridItem">
     <img src={urlToImage} alt={title} />
     <div className="gridText">
       <h2>{title}</h2>
@@ -23,5 +23,5 @@ export const GridItem = ({
       <p>Źródło: {name}</p>
       <p>Opublikowano:: {publishedAt}</p>
     </div>
-  </li>
+  </div>
 );

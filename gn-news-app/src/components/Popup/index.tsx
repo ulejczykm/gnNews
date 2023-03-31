@@ -20,7 +20,16 @@ export const Popup = ({ children, buttonComponent }: Props) => {
 
   return (
     <>
-      <Button onClick={handleClickOpen}>{buttonComponent}</Button>
+      <Button
+        sx={{
+          color: "wheat",
+          padding: "5px",
+          height: "100%",
+        }}
+        onClick={handleClickOpen}
+      >
+        {buttonComponent}
+      </Button>
 
       <Dialog open={open}>
         <DialogTitle sx={{ m: 0, p: 5, bgcolor: "wheat" }}>

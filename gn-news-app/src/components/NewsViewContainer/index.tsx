@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setArticlesNumber } from "store/slices/articlesNumberSlice";
 import { LIST } from "store/slices/newsViewSlice";
 import { RootState } from "store/store";
+import { Popup } from "components/Popup";
 
 interface NewsInterface {
   author: string;
@@ -53,24 +54,31 @@ export const NewsViewContainer = () => {
     <main className="mainContainer">
       <ul className={containerStyle}>
         {news.map(
-          ({ title, source, publishedAt, url, urlToImage, description }) =>
-            view === LIST ? (
-              <ListItem
-                key={url}
-                title={title}
-                name={source.name}
-                publishedAt={publishedAt}
-              />
-            ) : (
-              <GridItem
-                key={url}
-                title={title}
-                name={source.name}
-                publishedAt={publishedAt}
-                urlToImage={urlToImage}
-                description={description}
-              />
-            )
+          ({ title, source, publishedAt, url, urlToImage, description }) => (
+            <li className="newsItem" key={url}>
+              <Popup
+                buttonComponent={
+                  view === LIST ? (
+                    <ListItem
+                      title={title}
+                      name={source.name}
+                      publishedAt={publishedAt}
+                    />
+                  ) : (
+                    <GridItem
+                      title={title}
+                      name={source.name}
+                      publishedAt={publishedAt}
+                      urlToImage={urlToImage}
+                      description={description}
+                    />
+                  )
+                }
+              >
+                ss
+              </Popup>
+            </li>
+          )
         )}
       </ul>
     </main>
