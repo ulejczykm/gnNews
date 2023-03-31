@@ -7,6 +7,7 @@ import { setArticlesNumber } from "store/slices/articlesNumberSlice";
 import { LIST } from "store/slices/newsViewSlice";
 import { RootState } from "store/store";
 import { Popup } from "components/Popup";
+import { NewsContent } from "components/NewsContent";
 
 interface NewsInterface {
   author: string;
@@ -54,7 +55,15 @@ export const NewsViewContainer = () => {
     <main className="mainContainer">
       <ul className={containerStyle}>
         {news.map(
-          ({ title, source, publishedAt, url, urlToImage, description }) => (
+          ({
+            title,
+            source,
+            publishedAt,
+            url,
+            urlToImage,
+            description,
+            author,
+          }) => (
             <li className="newsItem" key={url}>
               <Popup
                 buttonComponent={
@@ -75,7 +84,13 @@ export const NewsViewContainer = () => {
                   )
                 }
               >
-                ss
+                <NewsContent
+                  title={title}
+                  description={description}
+                  author={author}
+                  name={source.name}
+                  url={url}
+                />
               </Popup>
             </li>
           )
