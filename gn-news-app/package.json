@@ -44,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/intl": "^1.2.0",
+    "sass": "^1.60.0"
   }
 }
