@@ -13,7 +13,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.23",
-    "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "react": "^18.2.0",
@@ -51,6 +50,7 @@
   },
   "devDependencies": {
     "@types/intl": "^1.2.0",
+    "@types/react": "^18.0.31",
     "sass": "^1.60.0"
   }
 }
