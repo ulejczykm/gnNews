@@ -23,8 +23,8 @@ interface NewsInterface {
 }
 
 export const NewsViewContainer = () => {
-  const { countryCodes } = useParams<{ countryCodes: string }>();
-  const code = countryCodes || "pl";
+  const codes = useParams<{ countryCodes: string }>();
+  const code = codes?.countryCodes || "pl";
   const apiKey = process.env.REACT_APP_NEWS_API;
   const { view } = useSelector((state: RootState) => state.newsView);
   const [news, setNews] = useState<NewsInterface[]>([]);
