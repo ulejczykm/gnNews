@@ -1,3 +1,4 @@
+import { GRID } from "store/slices/newsViewSlice";
 import "./styles.scss";
 
 interface Props {
@@ -15,7 +16,7 @@ export const GridItem = ({
   urlToImage,
   description,
 }: Props) => (
-  <div className="gridItem">
+  <div className="gridItem" data-testid={GRID}>
     <img src={urlToImage} alt={title} />
     <div className="gridText">
       <h2>{title}</h2>

@@ -1,3 +1,4 @@
+import { LIST } from "store/slices/newsViewSlice";
 import "./styles.scss";
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 }
 
 export const ListItem = ({ title, name, publishedAt }: Props) => (
-  <div className="newsContainer">
+  <div data-testid={LIST} className="newsContainer">
     <h2 className="newsTitle">{title}</h2>
     <p>Źródło: {name}</p>
     <p>Opublikowano: {publishedAt}</p>
